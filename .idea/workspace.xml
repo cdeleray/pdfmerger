@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9d931b94-ae7e-4a02-8e66-4199f1701cab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/cdy/pdf/OpenPdfMerger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/OpenPdfMerger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/cdy/pdf/PdfMergeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMergeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/cdy/pdf/PdfMerger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMerger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/cdy/pdf/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fr/cdy/pdf/OpenPdfMergerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/cdeleray/pdfmerger/OpenPdfMergerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/fr/cdy/pdf/sample.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/com/github/cdeleray/pdfmerger/sample.pdf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Christophe\intellij\pdf" />
+        <option value="C:\Users\Christophe\intellij\pdf\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VbyLizYiTo8fOMVhqutZiEV4bY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Christophe\intellij\pdf\src\test\java\fr\cdy\pdf" />
+      <recent name="C:\Users\Christophe\intellij\pdf\src\test\resources\fr\cdy\pdf" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.OpenPdfMergerTest">
+    <configuration name="Hope" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.cdy.pdf.Hope" />
+      <module name="pdf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.cdy.pdf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ITextPdfMergerTest (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pdf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.cdy.pdf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.cdy.pdf" />
+      <option name="MAIN_CLASS_NAME" value="fr.cdy.pdf.ITextPdfMergerTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ITextPdfMergerTest (4)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pdf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.cdy.pdf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.cdy.pdf" />
+      <option name="MAIN_CLASS_NAME" value="fr.cdy.pdf.ITextPdfMergerTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpenPdfMergerTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pdf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.cdy.pdf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.cdy.pdf" />
+      <option name="MAIN_CLASS_NAME" value="fr.cdy.pdf.OpenPdfMergerTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpenPdfMergerTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pdf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.cdy.pdf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.cdy.pdf" />
+      <option name="MAIN_CLASS_NAME" value="fr.cdy.pdf.OpenPdfMergerTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpenPdfMergerTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pdf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.cdy.pdf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.cdy.pdf" />
+      <option name="MAIN_CLASS_NAME" value="fr.cdy.pdf.OpenPdfMergerTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpenPdfMergerTest.testMergeFilesPath" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pdf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.cdy.pdf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.cdy.pdf" />
+      <option name="MAIN_CLASS_NAME" value="fr.cdy.pdf.OpenPdfMergerTest" />
+      <option name="METHOD_NAME" value="testMergeFilesPath" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.OpenPdfMergerTest" />
+        <item itemvalue="TestNG.OpenPdfMergerTest" />
+        <item itemvalue="TestNG.OpenPdfMergerTest.testMergeFilesPath" />
+        <item itemvalue="Application.Hope" />
+        <item itemvalue="TestNG.OpenPdfMergerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9d931b94-ae7e-4a02-8e66-4199f1701cab" name="Default Changelist" comment="" />
+      <created>1577536034062</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577536034062</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="23" key="#Project_Structure" timestamp="1577541155896">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="23" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1577541155896" />
+    <state x="275" y="23" key="#XML" timestamp="1577538749647">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="23" key="#XML/0.0.1366.728@0.0.1366.728" timestamp="1577538749647" />
+    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser" timestamp="1577540375537">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577540375537" />
+    <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577537245844">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1577537245844" />
+    <state x="308" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579360670148">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1579360670148" />
+    <state x="313" y="0" key="CommitChangelistDialog2" timestamp="1579364984840">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="313" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579364984840" />
+    <state x="565" y="258" width="439" height="211" key="Github.ShareDialog" timestamp="1579361006477">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="565" y="258" width="439" height="211" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1579361006477" />
+    <state x="509" y="70" key="Github.UntrackedFilesDialog" timestamp="1579361038388">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="509" y="70" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1579361038388" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1579361333564">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579361333564" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1579361333563">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1579361333563" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1579361333562">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1579361333562" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1579361333563">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579361333563" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1577537892008">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1577537892008" />
+    <state x="404" y="105" width="540" height="524" key="StructurePopup" timestamp="1579359437774">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="404" y="105" width="540" height="524" key="StructurePopup/0.0.1366.728@0.0.1366.728" timestamp="1579359437774" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1579364864221">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579364864221" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1579352178614">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579352178614" />
+    <state x="65" y="0" key="new project wizard" timestamp="1578765404230">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1578765404230" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1579360082409">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1579360082409" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1577539937152">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577539937152" />
+  </component>
+</project>
