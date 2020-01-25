@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d931b94-ae7e-4a02-8e66-4199f1701cab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/MIT_Licence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/OpenPdfMerger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/OpenPdfMerger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMergeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMergeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMerger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMerger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/cdeleray/pdfmerger/OpenPdfMergerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/cdeleray/pdfmerger/OpenPdfMergerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="9d931b94-ae7e-4a02-8e66-4199f1701cab" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -235,13 +224,28 @@
       <option name="project" value="LOCAL" />
       <updated>1579365660085</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add a licence">
+      <created>1579974358785</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579974358785</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add a licence">
+      <created>1579974480962</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579974480962</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rename package" />
     <MESSAGE value="clean pom.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean pom.xml" />
+    <MESSAGE value="Add a licence" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a licence" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="23" key="#Project_Structure" timestamp="1577541155896">
@@ -264,10 +268,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="308" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1579360670148" />
-    <state x="313" y="0" key="CommitChangelistDialog2" timestamp="1579974263746">
+    <state x="313" y="0" key="CommitChangelistDialog2" timestamp="1579974479464">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="313" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579974263746" />
+    <state x="313" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579974479464" />
     <state x="565" y="258" width="439" height="211" key="Github.ShareDialog" timestamp="1579361006477">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -292,6 +296,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579361333563" />
+    <state x="395" y="81" key="MultipleFileMergeDialog" timestamp="1579974546514">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="395" y="81" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1579974546514" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1579973818548">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -300,10 +308,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="404" y="105" width="540" height="524" key="StructurePopup/0.0.1366.728@0.0.1366.728" timestamp="1579359437774" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1579640343135">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1579974490573">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579640343135" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579974490573" />
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1579640056065">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
