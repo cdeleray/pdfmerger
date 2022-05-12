@@ -43,40 +43,40 @@ import java.util.stream.Stream;
  * @author Christophe Deleray
  */
 public class OpenPdfMerger implements PdfMerger {
-  @Override
-  public void merge(Collection<byte[]> pdfs, OutputStream out) {
-    ByteArrayOutputStream output = new ByteArrayOutputStream(1<<21); //will avoid to close 'out'
+    @Override
+    public void merge(Collection<byte[]> pdfs, OutputStream out) {
+        ByteArrayOutputStream output = new ByteArrayOutputStream(1 << 21); //will avoid to close 'out'
 
-    PdfCopyFields pdfCopyFields;
-    try {
-      pdfCopyFields = new PdfCopyFields(output);
-    } catch (DocumentException e) {
-      throw new PdfMergeException(e);
-    }
+        PdfCopyFields pdfCopyFields;
+        try {
+            pdfCopyFields = new PdfCopyFields(output);
+        } catch (DocumentException e) {
+            throw new PdfMergeException(e);
+        }
 
-    Consumer<byte[]> addData = data -> {
-      try {
-        pdfCopyFields.addDocument(new PdfReader(data));
-      } catch (IOException | DocumentException e) {
-        throw new PdfMergeException(e);
-      }
-    };
- 
-    Runnable dumpBytes = () -> {
-      try {
-        out.write(output.toByteArray());
-        out.flush();
-      } catch (IOException e) {
-        throw new PdfMergeException(e);
-      }
-    };
-    
-    try(Stream<byte[]> stream = pdfs.stream()) {
-      stream.filter(Objects::nonNull)
-            .filter(data -> data.length > 0)
-            .onClose(pdfCopyFields::close)
-            .onClose(dumpBytes)
-            .forEach(addData);
+        Consumer<byte[]> addData = data -> {
+            try {
+                pdfCopyFields.addDocument(new PdfReader(data));
+            } catch (IOException | DocumentException e) {
+                throw new PdfMergeException(e);
+            }
+        };
+
+        Runnable dumpBytes = () -> {
+            try {
+                out.write(output.toByteArray());
+                out.flush();
+            } catch (IOException e) {
+                throw new PdfMergeException(e);
+            }
+        };
+
+        try (Stream<byte[]> stream = pdfs.stream()) {
+            stream.filter(Objects::nonNull)
+                    .filter(data -> data.length > 0)
+                    .onClose(pdfCopyFields::close)
+                    .onClose(dumpBytes)
+                    .forEach(addData);
+        }
     }
-  }
 }

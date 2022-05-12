@@ -50,111 +50,111 @@ import static java.util.stream.Collectors.toList;
  */
 @Test
 public class OpenPdfMergerTest {
-  private OpenPdfMerger merger;
-  private byte[] content;
-  private String viewer;
-  private ByteArrayOutputStream out;
-  private boolean openPDF;
+    private OpenPdfMerger merger;
+    private byte[] content;
+    private String viewer;
+    private ByteArrayOutputStream out;
+    private boolean openPDF;
 
-  private File tempFile() throws IOException {
-    File file = File.createTempFile("temp", ".pdf");
-    file.deleteOnExit();
-    return file;
-  }
-
-  private final Function<byte[],Path> toFile = bytes -> {
-    try {
-      Path file = tempFile().toPath();
-      Files.copy(new ByteArrayInputStream(bytes), file, REPLACE_EXISTING);
-      return file;
-    } catch (IOException e) {
-      throw new UncheckedIOException(e);
+    private File tempFile() throws IOException {
+        File file = File.createTempFile("temp", ".pdf");
+        file.deleteOnExit();
+        return file;
     }
-  };
 
-  @BeforeMethod
-  void beforeMethod() {
-    merger = new OpenPdfMerger();
-    out = new ByteArrayOutputStream();
-  }
-  
-  @BeforeClass
-  void beforeClass() throws Exception {
-    content = IOUtils.toByteArray(getClass().getResourceAsStream("sample.pdf"));
-    
-    Properties prop = new Properties();
-    try(InputStream in = getClass().getResourceAsStream("/placeholder.properties")) {
-      prop.load(in);
+    private final Function<byte[], Path> toFile = bytes -> {
+        try {
+            Path file = tempFile().toPath();
+            Files.copy(new ByteArrayInputStream(bytes), file, REPLACE_EXISTING);
+            return file;
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    };
+
+    @BeforeMethod
+    void beforeMethod() {
+        merger = new OpenPdfMerger();
+        out = new ByteArrayOutputStream();
     }
-    
-    viewer = prop.getProperty("acroread");
-    openPDF = Boolean.parseBoolean(prop.getProperty("openPDF"));
-  }
-  
-  private void showPDF() {
-    if(!openPDF) {
-      return;
+
+    @BeforeClass
+    void beforeClass() throws Exception {
+        content = IOUtils.toByteArray(getClass().getResourceAsStream("sample.pdf"));
+
+        Properties prop = new Properties();
+        try (InputStream in = getClass().getResourceAsStream("/placeholder.properties")) {
+            prop.load(in);
+        }
+
+        viewer = prop.getProperty("acroread");
+        openPDF = Boolean.parseBoolean(prop.getProperty("openPDF"));
     }
-    
-    try {
-      File file = tempFile();
-      FileUtils.copyInputStreamToFile(new ByteArrayInputStream(out.toByteArray()), file);
-      new ProcessBuilder(viewer, file.getPath()).start().waitFor();
-    } catch (IOException e) {
-      throw new UncheckedIOException(e);
-    } catch (InterruptedException e) {
+
+    private void showPDF() {
+        if (!openPDF) {
+            return;
+        }
+
+        try {
+            File file = tempFile();
+            FileUtils.copyInputStreamToFile(new ByteArrayInputStream(out.toByteArray()), file);
+            new ProcessBuilder(viewer, file.getPath()).start().waitFor();
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        } catch (InterruptedException e) {
+        }
     }
-  }
-  
-  /**
-   * Test method for {@link OpenPdfMerger#merge(Collection, java.io.OutputStream)}.
-   */
-  public void testMerge() {
-    List<byte[]> pdfs = Stream.generate(() -> content.clone()).limit(5).collect(toList());
-    merger.merge(pdfs, out);
 
-    Assert.assertNotEquals(out.toByteArray().length, 0);
+    /**
+     * Test method for {@link OpenPdfMerger#merge(Collection, java.io.OutputStream)}.
+     */
+    public void testMerge() {
+        List<byte[]> pdfs = Stream.generate(() -> content.clone()).limit(5).collect(toList());
+        merger.merge(pdfs, out);
 
-    showPDF();
-  }
+        Assert.assertNotEquals(out.toByteArray().length, 0);
 
-  /**
-   * Test method for {@link OpenPdfMerger#merge(Collection, Path)}.
-   */
-  public void testMergePath() throws IOException {
-    List<byte[]> pdfs = Stream.generate(() -> content.clone()).limit(5).collect(toList());
-    Path dest = tempFile().toPath();
-    merger.merge(pdfs, dest);
+        showPDF();
+    }
 
-    FileUtils.copyFile(dest.toFile(), out);
-    Assert.assertNotEquals(out.toByteArray().length, 0);
+    /**
+     * Test method for {@link OpenPdfMerger#merge(Collection, Path)}.
+     */
+    public void testMergePath() throws IOException {
+        List<byte[]> pdfs = Stream.generate(() -> content.clone()).limit(5).collect(toList());
+        Path dest = tempFile().toPath();
+        merger.merge(pdfs, dest);
 
-    showPDF();
-  }
+        FileUtils.copyFile(dest.toFile(), out);
+        Assert.assertNotEquals(out.toByteArray().length, 0);
 
-  /**
-   * Test method for {@link OpenPdfMerger#mergeFiles(Collection, OutputStream)}.
-   */
-  public void testMergeFiles() {
-    List<Path> pdfs = Stream.generate(() -> content.clone()).map(toFile).limit(5).collect(toList());
-    merger.mergeFiles(pdfs, out);
+        showPDF();
+    }
 
-    Assert.assertNotEquals(out.toByteArray().length, 0);
+    /**
+     * Test method for {@link OpenPdfMerger#mergeFiles(Collection, OutputStream)}.
+     */
+    public void testMergeFiles() {
+        List<Path> pdfs = Stream.generate(() -> content.clone()).map(toFile).limit(5).collect(toList());
+        merger.mergeFiles(pdfs, out);
 
-    showPDF();
-  }
+        Assert.assertNotEquals(out.toByteArray().length, 0);
 
-  /**
-   * Test method for {@link OpenPdfMerger#mergeFiles(Collection, Path)}.
-   */
-  public void testMergeFilesPath() throws IOException {
-    Path dest = tempFile().toPath();
-    List<Path> pdfs = Stream.generate(() -> content.clone()).map(toFile).limit(5).collect(toList());
-    merger.mergeFiles(pdfs, dest);
+        showPDF();
+    }
 
-    FileUtils.copyFile(dest.toFile(), out);
-    Assert.assertNotEquals(out.toByteArray().length, 0);
+    /**
+     * Test method for {@link OpenPdfMerger#mergeFiles(Collection, Path)}.
+     */
+    public void testMergeFilesPath() throws IOException {
+        Path dest = tempFile().toPath();
+        List<Path> pdfs = Stream.generate(() -> content.clone()).map(toFile).limit(5).collect(toList());
+        merger.mergeFiles(pdfs, dest);
 
-    showPDF();
-  }
+        FileUtils.copyFile(dest.toFile(), out);
+        Assert.assertNotEquals(out.toByteArray().length, 0);
+
+        showPDF();
+    }
 }

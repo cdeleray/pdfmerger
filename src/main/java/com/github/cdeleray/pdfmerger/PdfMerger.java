@@ -45,85 +45,79 @@ import static java.util.stream.Collectors.toList;
  * @author Christophe Deleray
  */
 public interface PdfMerger {
-  /**
-   * Dumps out the given output stream the bytes that correspond to the 
-   * single PDF that results of merging all given PDF data.
-   * 
-   * @param pdfs a sequence of PDF content
-   * @param out an output stream where the PDF will be dumped out
-   * @throws PdfMergeException if an error occurs when merging the PDF content
-   */
-  void merge(Collection<byte[]> pdfs, OutputStream out);
+    /**
+     * Dumps out the given output stream the bytes that correspond to the
+     * single PDF that results of merging all given PDF data.
+     *
+     * @param pdfs a sequence of PDF content
+     * @param out  an output stream where the PDF will be dumped out
+     * @throws PdfMergeException if an error occurs when merging the PDF content
+     */
+    void merge(Collection<byte[]> pdfs, OutputStream out);
 
-  /**
-   * Merges all given PDF content as a single one file designed by {@code dest}.
-   *
-   * @implSpec
-   * The default implementation starts by creating an output stream from
-   * the {@code dest} file. Then, it calls the {@link #merge(Collection, OutputStream)}
-   * method.
-   *
-   * @param pdfs the PDF files to merge in a single one
-   * @param dest the final file that results of merging all given PDF files
-   * @throws PdfMergeException if an error occurs when merging the PDF files
-   */
-  default void merge(Collection<byte[]> pdfs, Path dest) {
-    try {
-      merge(pdfs, Files.newOutputStream(dest, CREATE, WRITE, TRUNCATE_EXISTING));
-    } catch (IOException e) {
-      throw new PdfMergeException(e);
-    }
-  }
-
-  /**
-   * Dumps out the given output stream the bytes that correspond to the
-   * single PDF content that results of merging all given PDF files.
-   *
-   * @implSpec
-   * The default implementation calls the {@link #merge(Collection, OutputStream)}
-   * method with an array of {@link Path} instances created from the files
-   * specified by {@code pdfs}.
-   *
-   * @param pdfs the PDF files to merge in a single one
-   * @param out an output stream where the PDF will be dumped out
-   * @throws PdfMergeException if an error occurs when merging the PDF files
-   */
-  default void mergeFiles(Collection<Path> pdfs, OutputStream out) {
-    Function<Path, byte[]> toBytes = path -> {
+    /**
+     * Merges all given PDF content as a single one file designed by {@code dest}.
+     *
+     * @param pdfs the PDF files to merge in a single one
+     * @param dest the final file that results of merging all given PDF files
+     * @throws PdfMergeException if an error occurs when merging the PDF files
+     * @implSpec The default implementation starts by creating an output stream from
+     * the {@code dest} file. Then, it calls the {@link #merge(Collection, OutputStream)}
+     * method.
+     */
+    default void merge(Collection<byte[]> pdfs, Path dest) {
         try {
-          return readAllBytes(path);
+            merge(pdfs, Files.newOutputStream(dest, CREATE, WRITE, TRUNCATE_EXISTING));
         } catch (IOException e) {
-          throw new PdfMergeException(e);
+            throw new PdfMergeException(e);
         }
-    };
-
-    Collection<byte[]> collection = pdfs.stream()
-        .filter(Objects::nonNull)
-        .filter(Files::exists)
-        .filter(Files::isRegularFile)
-        .map(toBytes)
-        .collect(toList());
-
-    merge(collection, out);
-  }
-
-  /**
-   * Merges all given PDF files as a single one file designed by {@code dest}.
-   *
-   * @implSpec
-   * The default implementation starts by creating an output stream from
-   * the {@code dest} file. Then, it calls the {@link #mergeFiles(Collection, OutputStream)}
-   * method.
-   *
-   * @param pdfs the PDF files to merge in a single one
-   * @param dest the final file that results of merging all given PDF files
-   * @throws PdfMergeException if an error occurs when merging the PDF files
-   */
-  default void mergeFiles(Collection<Path> pdfs, Path dest) {
-    try {
-      mergeFiles(pdfs, Files.newOutputStream(dest, CREATE, WRITE, TRUNCATE_EXISTING));
-    } catch (IOException e) {
-      throw new PdfMergeException(e);
     }
-  }
+
+    /**
+     * Dumps out the given output stream the bytes that correspond to the
+     * single PDF content that results of merging all given PDF files.
+     *
+     * @param pdfs the PDF files to merge in a single one
+     * @param out  an output stream where the PDF will be dumped out
+     * @throws PdfMergeException if an error occurs when merging the PDF files
+     * @implSpec The default implementation calls the {@link #merge(Collection, OutputStream)}
+     * method with an array of {@link Path} instances created from the files
+     * specified by {@code pdfs}.
+     */
+    default void mergeFiles(Collection<Path> pdfs, OutputStream out) {
+        Function<Path, byte[]> toBytes = path -> {
+            try {
+                return readAllBytes(path);
+            } catch (IOException e) {
+                throw new PdfMergeException(e);
+            }
+        };
+
+        Collection<byte[]> collection = pdfs.stream()
+                .filter(Objects::nonNull)
+                .filter(Files::exists)
+                .filter(Files::isRegularFile)
+                .map(toBytes)
+                .collect(toList());
+
+        merge(collection, out);
+    }
+
+    /**
+     * Merges all given PDF files as a single one file designed by {@code dest}.
+     *
+     * @param pdfs the PDF files to merge in a single one
+     * @param dest the final file that results of merging all given PDF files
+     * @throws PdfMergeException if an error occurs when merging the PDF files
+     * @implSpec The default implementation starts by creating an output stream from
+     * the {@code dest} file. Then, it calls the {@link #mergeFiles(Collection, OutputStream)}
+     * method.
+     */
+    default void mergeFiles(Collection<Path> pdfs, Path dest) {
+        try {
+            mergeFiles(pdfs, Files.newOutputStream(dest, CREATE, WRITE, TRUNCATE_EXISTING));
+        } catch (IOException e) {
+            throw new PdfMergeException(e);
+        }
+    }
 }
