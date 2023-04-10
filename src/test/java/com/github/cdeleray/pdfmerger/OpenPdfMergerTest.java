@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2020 Christophe Deleray
+ * Copyright (c) 2023 Christophe Deleray
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,10 +26,10 @@ package com.github.cdeleray.pdfmerger;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -42,29 +42,30 @@ import java.util.stream.Stream;
 
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static java.util.stream.Collectors.toList;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /**
  * A {@code OpenPdfMergerTest} object represents a test class for {@link OpenPdfMerger}.
  *
  * @author Christophe Deleray
  */
-@Test
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class OpenPdfMergerTest {
     private OpenPdfMerger merger;
-    private byte[] content;
+    private static byte[] content;
     private String viewer;
     private ByteArrayOutputStream out;
     private boolean openPDF;
 
     private File tempFile() throws IOException {
-        File file = File.createTempFile("temp", ".pdf");
+        var file = File.createTempFile("temp", ".pdf");
         file.deleteOnExit();
         return file;
     }
 
     private final Function<byte[], Path> toFile = bytes -> {
         try {
-            Path file = tempFile().toPath();
+            var file = tempFile().toPath();
             Files.copy(new ByteArrayInputStream(bytes), file, REPLACE_EXISTING);
             return file;
         } catch (IOException e) {
@@ -72,15 +73,15 @@ public class OpenPdfMergerTest {
         }
     };
 
-    @BeforeMethod
+    @BeforeEach
     void beforeMethod() {
         merger = new OpenPdfMerger();
         out = new ByteArrayOutputStream();
     }
 
-    @BeforeClass
+    @BeforeAll
     void beforeClass() throws Exception {
-        content = IOUtils.toByteArray(getClass().getResourceAsStream("sample.pdf"));
+        content = IOUtils.resourceToByteArray("/com/github/cdeleray/pdfmerger/sample.pdf");
 
         Properties prop = new Properties();
         try (InputStream in = getClass().getResourceAsStream("/placeholder.properties")) {
@@ -97,7 +98,7 @@ public class OpenPdfMergerTest {
         }
 
         try {
-            File file = tempFile();
+            var file = tempFile();
             FileUtils.copyInputStreamToFile(new ByteArrayInputStream(out.toByteArray()), file);
             new ProcessBuilder(viewer, file.getPath()).start().waitFor();
         } catch (IOException e) {
@@ -109,11 +110,15 @@ public class OpenPdfMergerTest {
     /**
      * Test method for {@link OpenPdfMerger#merge(Collection, java.io.OutputStream)}.
      */
+    @Test
     public void testMerge() {
-        List<byte[]> pdfs = Stream.generate(() -> content.clone()).limit(5).collect(toList());
+        List<byte[]> pdfs = Stream.generate(() -> content.clone())
+                .limit(5)
+                .collect(toList());
+
         merger.merge(pdfs, out);
 
-        Assert.assertNotEquals(out.toByteArray().length, 0);
+        assertNotEquals(out.toByteArray().length, 0);
 
         showPDF();
     }
@@ -121,13 +126,17 @@ public class OpenPdfMergerTest {
     /**
      * Test method for {@link OpenPdfMerger#merge(Collection, Path)}.
      */
+    @Test
     public void testMergePath() throws IOException {
-        List<byte[]> pdfs = Stream.generate(() -> content.clone()).limit(5).collect(toList());
-        Path dest = tempFile().toPath();
+        List<byte[]> pdfs = Stream.generate(() -> content.clone())
+                .limit(5)
+                .collect(toList());
+
+        var dest = tempFile().toPath();
         merger.merge(pdfs, dest);
 
         FileUtils.copyFile(dest.toFile(), out);
-        Assert.assertNotEquals(out.toByteArray().length, 0);
+        assertNotEquals(out.toByteArray().length, 0);
 
         showPDF();
     }
@@ -135,11 +144,15 @@ public class OpenPdfMergerTest {
     /**
      * Test method for {@link OpenPdfMerger#mergeFiles(Collection, OutputStream)}.
      */
+    @Test
     public void testMergeFiles() {
-        List<Path> pdfs = Stream.generate(() -> content.clone()).map(toFile).limit(5).collect(toList());
+        List<Path> pdfs = Stream.generate(() -> content.clone())
+                .map(toFile)
+                .limit(5).collect(toList());
+
         merger.mergeFiles(pdfs, out);
 
-        Assert.assertNotEquals(out.toByteArray().length, 0);
+        assertNotEquals(out.toByteArray().length, 0);
 
         showPDF();
     }
@@ -147,13 +160,18 @@ public class OpenPdfMergerTest {
     /**
      * Test method for {@link OpenPdfMerger#mergeFiles(Collection, Path)}.
      */
+    @Test
     public void testMergeFilesPath() throws IOException {
         Path dest = tempFile().toPath();
-        List<Path> pdfs = Stream.generate(() -> content.clone()).map(toFile).limit(5).collect(toList());
+        List<Path> pdfs = Stream.generate(() -> content.clone())
+                .map(toFile)
+                .limit(5)
+                .collect(toList());
+
         merger.mergeFiles(pdfs, dest);
 
         FileUtils.copyFile(dest.toFile(), out);
-        Assert.assertNotEquals(out.toByteArray().length, 0);
+        assertNotEquals(out.toByteArray().length, 0);
 
         showPDF();
     }

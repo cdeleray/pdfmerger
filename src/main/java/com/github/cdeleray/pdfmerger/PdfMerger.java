@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2020 Christophe Deleray
+ * Copyright (c) 2023 Christophe Deleray
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,9 +33,7 @@ import java.util.Objects;
 import java.util.function.Function;
 
 import static java.nio.file.Files.readAllBytes;
-import static java.nio.file.StandardOpenOption.CREATE;
-import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
-import static java.nio.file.StandardOpenOption.WRITE;
+import static java.nio.file.StandardOpenOption.*;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -93,7 +91,7 @@ public interface PdfMerger {
             }
         };
 
-        Collection<byte[]> collection = pdfs.stream()
+        var collection = pdfs.stream()
                 .filter(Objects::nonNull)
                 .filter(Files::exists)
                 .filter(Files::isRegularFile)

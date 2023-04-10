@@ -4,21 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d931b94-ae7e-4a02-8e66-4199f1701cab" name="Default Changelist" comment="indentation">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="9d931b94-ae7e-4a02-8e66-4199f1701cab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/OpenPdfMerger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/OpenPdfMerger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMergeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMergeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMerger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/PdfMerger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/cdeleray/pdfmerger/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/github/cdeleray/pdfmerger/OpenPdfMergerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/cdeleray/pdfmerger/OpenPdfMergerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/placeholder.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/placeholder.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -36,6 +41,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="3lw3i98a" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -45,25 +53,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="copyright" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Christophe\intellij\pdf\src\test\java\fr\cdy\pdf" />
       <recent name="C:\Users\Christophe\intellij\pdf\src\test\resources\fr\cdy\pdf" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.OpenPdfMergerTest (1)">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.cdeleray.pdfmerger.App" />
+  <component name="RunManager" selected="JUnit.OpenPdfMergerTest">
+    <configuration name="MergeFiles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.cdeleray.pdfmerger.MergeFiles" />
       <module name="pdfmerger" />
       <extension name="coverage">
         <pattern>
@@ -75,8 +81,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MergeFiles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.cdeleray.pdfmerger.MergeFiles" />
+    <configuration name="OpenPdfMergerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pdfmerger" />
       <extension name="coverage">
         <pattern>
@@ -84,6 +89,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.github.cdeleray.pdfmerger" />
+      <option name="MAIN_CLASS_NAME" value="com.github.cdeleray.pdfmerger.OpenPdfMergerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OpenPdfMergerTest" />
+        <item itemvalue="TestNG.OpenPdfMergerTest.testMergeFilesPath" />
+        <item itemvalue="TestNG.OpenPdfMergerTest" />
         <item itemvalue="TestNG.OpenPdfMergerTest (1)" />
-        <item itemvalue="Application.App" />
         <item itemvalue="Application.MergeFiles" />
-        <item itemvalue="TestNG.OpenPdfMergerTest" />
-        <item itemvalue="TestNG.OpenPdfMergerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -238,14 +246,40 @@
       <option name="project" value="LOCAL" />
       <updated>1579974610299</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="indentation">
+      <created>1652380895031</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1652380895031</updated>
+    </task>
+    <task id="LOCAL-00008" summary="upgrade common-io + indentation">
+      <created>1652381004144</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1652381004144</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rename package" />
     <MESSAGE value="clean pom.xml" />
     <MESSAGE value="Add a licence" />
     <MESSAGE value="indentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="indentation" />
+    <MESSAGE value="upgrade common-io + indentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrade common-io + indentation" />
   </component>
 </project>

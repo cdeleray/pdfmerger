@@ -34,7 +34,6 @@ import java.io.OutputStream;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 /**
  * A {@code OpenPdfMerger} object is the <a href="https://github.com/LibrePDF/OpenPDF">
@@ -45,7 +44,7 @@ import java.util.stream.Stream;
 public class OpenPdfMerger implements PdfMerger {
     @Override
     public void merge(Collection<byte[]> pdfs, OutputStream out) {
-        ByteArrayOutputStream output = new ByteArrayOutputStream(1 << 21); //will avoid to close 'out'
+        var output = new ByteArrayOutputStream(1 << 21); //will avoid to close 'out'
 
         PdfCopyFields pdfCopyFields;
         try {
@@ -71,7 +70,7 @@ public class OpenPdfMerger implements PdfMerger {
             }
         };
 
-        try (Stream<byte[]> stream = pdfs.stream()) {
+        try (var stream = pdfs.stream()) {
             stream.filter(Objects::nonNull)
                     .filter(data -> data.length > 0)
                     .onClose(pdfCopyFields::close)
